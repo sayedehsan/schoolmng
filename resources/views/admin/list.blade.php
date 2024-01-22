@@ -2,9 +2,9 @@
 @section('context')
 <div class="card">
     <div class="card-header header-elements-inline">
-        <div class="row flex">
-            <div class="col-sm-6"><h5 class="card-title">Admin List</h5></div>
-            <div class="col-sm-6" style="text-align: right;"><a href="{{url('admin/add')}}" type="button" class="btn bg-teal-400 btn-labeled btn-labeled-left">Add Admin</a></div>
+        <div class="row">
+            <div class="col-md-6"><h5 class="card-title">Admin List</h5></div>
+            <div class="col-md-6"><a href="{{url('admin/add')}}" type="button" class="btn bg-teal-400 btn-labeled">Add</a></div>
         </div>
     </div>
 
