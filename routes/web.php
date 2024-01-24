@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/edit/{id}', [AdminController::class, 'edit']);
     Route::post('admin/edit/{id}', [AdminController::class, 'update']);
     Route::get('admin/delete/{id}', [AdminController::class, 'delete']);
+
+    Route::get('class/list', [ClassController::class, 'list']);
+    Route::get('class/add', [ClassController::class, 'add']);
+    Route::post('class/add', [ClassController::class, 'insert']);
+    Route::get('class/edit/{id}', [ClassController::class, 'edit']);
+    Route::post('class/edit/{id}', [ClassController::class, 'update']);
+    Route::get('class/delete/{id}', [ClassController::class, 'delete']);
 });
 
 Route::group(['middleware' => 'office'], function () {

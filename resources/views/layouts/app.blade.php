@@ -148,6 +148,9 @@
 						<li class="nav-item ">
 							<a href="{{url('admin/list')}}" class="nav-link"><i class="icon-copy"></i> <span>Admin</span></a>
 						</li>
+						<li class="nav-item ">
+							<a href="{{url('class/list')}}" class="nav-link"><i class="icon-copy"></i> <span>Class</span></a>
+						</li>
 						@endif
 						@if(Auth::user()->type == 2)
 						<li class="nav-item ">
