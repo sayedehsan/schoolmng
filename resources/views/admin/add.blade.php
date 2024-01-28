@@ -8,7 +8,6 @@
     <div class="card-body">
         <form action="{{url('admin/add')}}" method="post">
             {{ csrf_field() }}
-			@include('_message')
             <fieldset class="mb-3">
                 <legend class="text-uppercase font-size-sm font-weight-bold">Admin Information</legend>
                 <div class="form-group row">

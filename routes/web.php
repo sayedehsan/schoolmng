@@ -5,6 +5,7 @@ use App\Http\Controllers\AssignSubjectController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,6 +56,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('assgsub/edit/{id}', [AssignSubjectController::class, 'edit']);
     Route::post('assgsub/edit/{id}', [AssignSubjectController::class, 'update']);
     Route::get('assgsub/delete/{id}', [AssignSubjectController::class, 'delete']);
+
+    Route::get('student/list', [StudentController::class, 'list']);
+    Route::get('student/add', [StudentController::class, 'add']);
+    Route::post('student/add', [StudentController::class, 'insert']);
+    Route::get('student/edit/{id}', [StudentController::class, 'edit']);
+    Route::post('student/edit/{id}', [StudentController::class, 'update']);
+    Route::get('student/delete/{id}', [StudentController::class, 'delete']);
+
 });
 
 Route::group(['middleware' => 'office'], function () {

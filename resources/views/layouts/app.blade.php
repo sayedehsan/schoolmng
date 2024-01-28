@@ -149,6 +149,9 @@
 						<li class="nav-item ">
 							<a href="{{url('assgsub/list')}}" class="nav-link" @if (request()->segment(2) == "assign_subject") active @endif><i class="icon-copy"></i> <span>Assign Subject</span></a>
 						</li>
+						<li class="nav-item ">
+							<a href="{{url('student/list')}}" class="nav-link" @if (request()->segment(2) == "student") active @endif><i class="icon-copy"></i> <span>Student</span></a>
+						</li>
 						@endif
 						@if(Auth::user()->type == 2)
 						<li class="nav-item ">

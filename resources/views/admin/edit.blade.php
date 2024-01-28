@@ -4,11 +4,9 @@
     <div class="card-header header-elements-inline">
         <h5 class="card-title">Admin Edit Form</h5>
     </div>
-
     <div class="card-body">
         <form action="" method="post">
             {{ csrf_field() }}
-			@include('_message')
             <fieldset class="mb-3">
                 <legend class="text-uppercase font-size-sm font-weight-bold">Admin Information Update</legend>
                 <div class="form-group row">
