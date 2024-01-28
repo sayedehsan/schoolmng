@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AssignSubjectController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
@@ -47,6 +48,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('subject/edit/{id}', [SubjectController::class, 'edit']);
     Route::post('subject/edit/{id}', [SubjectController::class, 'update']);
     Route::get('subject/delete/{id}', [SubjectController::class, 'delete']);
+
+    Route::get('assgsub/list', [AssignSubjectController::class, 'list']);
+    Route::get('assgsub/add', [AssignSubjectController::class, 'add']);
+    Route::post('assgsub/add', [AssignSubjectController::class, 'insert']);
+    Route::get('assgsub/edit/{id}', [AssignSubjectController::class, 'edit']);
+    Route::post('assgsub/edit/{id}', [AssignSubjectController::class, 'update']);
+    Route::get('assgsub/delete/{id}', [AssignSubjectController::class, 'delete']);
 });
 
 Route::group(['middleware' => 'office'], function () {

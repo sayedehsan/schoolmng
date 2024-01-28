@@ -15,7 +15,6 @@ class SubjectModel extends Model
         return self::select('subjects.*','users.name as creator')
             ->join('users', 'users.id', 'subjects.created_by')
             ->where('subjects.trash', '=', 'no')
-            ->orderBy('subjects.id', 'desc')
             ->paginate(20);
     }
 

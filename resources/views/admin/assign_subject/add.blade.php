@@ -2,24 +2,29 @@
 @section('context')
 <div class="card">
     <div class="card-body">
-        <form action="{{url('subject/add')}}" method="post">
+        <form action="{{url('assgsub/add')}}" method="post">
 			@include('_message')
             {{ csrf_field() }}
             <fieldset class="mb-3">
-                <legend class="text-uppercase font-size-sm font-weight-bold">Subject Input Form</legend>
+                <legend class="text-uppercase font-size-sm font-weight-bold">Assign Subject Form</legend>
                 <div class="form-group row">
-                    <label class="col-form-label col-lg-2">Name</label>
+                    <label class="col-form-label col-lg-2">Class</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" name="name" required>
+                       <select class="form-control" name="class_id" required>
+                        <option value="" selected>Select Class</option>
+                        @foreach ($classList as $class)
+                        <option value="{{$class->id}}">{{$class->name}}</option>
+                        @endforeach
+                       </select>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-form-label col-lg-2">Type</label>
+                    <label class="col-form-label col-lg-2">Subject</label>
                     <div class="col-lg-10">
-                       <select class="form-control" name="type" required>
-                        <option value="" selected>Select Subject Type</option>
-                        <option value="theory" >Theory</option>
-                        <option value="practical">Practical</option>
+                        @foreach ($subjectList as $subject)
+                        <label><input type="checkbox" name="subjects[]" value="{{$subject->id}}"> {{$subject->name}}</label>
+                            
+                        @endforeach
                        </select>
                     </div>
                 </div>
