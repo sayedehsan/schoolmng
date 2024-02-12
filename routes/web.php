@@ -5,6 +5,7 @@ use App\Http\Controllers\AssignSubjectController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ParentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +64,13 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('student/edit/{id}', [StudentController::class, 'edit']);
     Route::post('student/edit/{id}', [StudentController::class, 'update']);
     Route::get('student/delete/{id}', [StudentController::class, 'delete']);
+
+    Route::get('parent/list', [ParentController::class, 'list']);
+    Route::get('parent/add', [ParentController::class, 'add']);
+    Route::post('parent/add', [ParentController::class, 'insert']);
+    Route::get('parent/edit/{id}', [ParentController::class, 'edit']);
+    Route::post('parent/edit/{id}', [ParentController::class, 'update']);
+    Route::get('parent/delete/{id}', [ParentController::class, 'delete']);
 
 });
 

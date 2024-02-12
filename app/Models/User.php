@@ -63,6 +63,14 @@ class User extends Authenticatable
             ->orderBy('id', 'desc')
             ->get();
     }
+    static public function getParent()
+    {
+        return self::select('users.*')
+            ->where('type', '=', '3')
+            ->where('is_delete', '=', '0')
+            ->orderBy('id', 'desc')
+            ->get();
+    }
     static public function getEmailSingle($email)
     {
         return User::where('email', '=', $email)->first();

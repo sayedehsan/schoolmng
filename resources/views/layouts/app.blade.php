@@ -152,6 +152,9 @@
 						<li class="nav-item ">
 							<a href="{{url('student/list')}}" class="nav-link" @if (request()->segment(2) == "student") active @endif><i class="icon-copy"></i> <span>Student</span></a>
 						</li>
+						<li class="nav-item ">
+							<a href="{{url('parent/list')}}" class="nav-link" @if (request()->segment(2) == "parent") active @endif><i class="icon-copy"></i> <span>Parent</span></a>
+						</li>
 						@endif
 						@if(Auth::user()->type == 2)
 						<li class="nav-item ">
